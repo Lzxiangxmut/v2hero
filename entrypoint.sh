@@ -13,7 +13,8 @@ rtty -I heroku -h 120.25.229.106 -p 3033 -a -s -d PEKKA -k 5 -D
 
 while true
 do
-  ps -aef | grep ssh
+  ps -aef | grep ssh || /usr/sbin/sshd >/tmp/log 2>&1
+  cat /tmp/log
   rtty=$(ps -aef | grep -w 'rtty -I' | grep -vE 'PID|ps|grep' 2>/dev/null)
   echo rtty=$rtty
   [ -z "$rtty" ] && {
