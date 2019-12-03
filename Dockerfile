@@ -1,4 +1,5 @@
 FROM ubuntu:16.04
+LABEL maintainer="https://github.com/onplus"
 
 RUN apt-get update -y
 RUN apt-get install -y jq vim git zip unzip wget curl net-tools iputils-ping openssh-server
