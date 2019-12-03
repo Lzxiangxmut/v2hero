@@ -1,9 +1,9 @@
 echo PORT=$PORT
 sed -i "s/Port 22/Port $PORT/g" /etc/ssh/sshd_config
 
-/etc/init.d/ssh restart
-
 cat /etc/ssh/sshd_config
+
+/usr/sbin/sshd
 
 ps -aef
 
