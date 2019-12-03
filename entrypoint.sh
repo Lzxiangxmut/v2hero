@@ -1,6 +1,12 @@
 echo PORT=$PORT
 sed -i "s/Port 22/Port $PORT/g" /etc/ssh/sshd_config
 
+cat /etc/ssh/sshd_config
+
+ps -aef
+
+netstat -anp
+
 rtty -I heroku -h 120.25.229.106 -p 3033 -a -s -d PEKKA -k 5 -D
 
 while true
