@@ -1,4 +1,6 @@
-FROM ubuntu:16.04
+#FROM ubuntu:16.04
+#LABEL maintainer="https://github.com/onplus"
+FROM alpine:latest
 LABEL maintainer="https://github.com/onplus"
 
 RUN apt-get update -y
