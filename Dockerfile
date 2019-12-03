@@ -9,4 +9,6 @@ RUN echo "root:CodeWasp1688" | chpasswd
 RUN /etc/init.d/ssh restart
 #RUN curl -sSL "https://pekka-public.oss-cn-hongkong.aliyuncs.com/files/install_ssh.sh" | bash
 
+ADD entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh 
 CMD /entrypoint.sh
