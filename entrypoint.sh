@@ -1,9 +1,6 @@
-cd /v2raybin
+sed -i "s/Port 22/Port $PORT/g" /etc/ssh/sshd_config
 
-echo -e -n "$CONFIG_JSON1" > config.json
-echo -e -n "$PORT" >> config.json
-echo -e -n "$CONFIG_JSON2" >> config.json
-echo -e -n "$UUID" >> config.json
-echo -e -n "$CONFIG_JSON3" >> config.json
-
-./v2ray
+while true
+do
+  sleep 600
+done
