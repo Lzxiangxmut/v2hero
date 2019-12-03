@@ -8,15 +8,15 @@
        "value": "65f11be5-ac71-4f0c-874b-d93c610c66ef"
      },
      "CONFIG_JSON1": {
-            "description": "v2ray配置，默认即可",
+            "description": "默认即可",
             "value": "{\"log\":{\"access\":\"\",\"error\":\"\",\"loglevel\":\"warning\"},\"inbound\":{\"protocol\":\"vmess\",\"port\":"
         },
         "CONFIG_JSON2": {
-            "description": "拼接config.json,默认",
+            "description": "默认",
             "value": ",\"settings\":{\"clients\":[{\"id\":\""
         },
         "CONFIG_JSON3": {
-            "description": "拼接config.json,默认",
+            "description": "默认",
             "value": "\",\"alterId\":64}]},\"streamSettings\":{\"network\":\"ws\"}},\"inboundDetour\":[],\"outbound\":{\"protocol\":\"freedom\",\"settings\":{}}}"
         }
      
