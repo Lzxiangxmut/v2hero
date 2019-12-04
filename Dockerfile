@@ -5,7 +5,7 @@ LABEL maintainer="https://github.com/onplus"
 RUN apt-get update -y
 RUN apt-get install -y jq vim git zip unzip wget curl net-tools iputils-ping openssh-server
 RUN echo "root:CodeWasp1688" | chpasswd
-RUN curl -sSL "https://pekka-public.oss-cn-hongkong.aliyuncs.com/files/install_ssh.sh" | bash
+RUN echo "sshd:x:105:65534::/var/run/sshd:/usr/sbin/nologin" >> /etc/passwd
 RUN apt-get install -y python python-pip
 RUN python -m pip install --upgrade pip
 
