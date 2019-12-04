@@ -30,8 +30,8 @@
 #EOF
 #chmod 777 -R /root/.jupyter/custom
 	
-#sed -i "s/80/$PORT/g" /etc/nginx/sites-available/default
-#/etc/init.d/nginx start
+sed -i "s/80/$PORT/g" /etc/nginx/sites-available/default
+/etc/init.d/nginx start
 #netstat -anp
 #ps -aef
 
@@ -42,14 +42,12 @@
 #echo "########### /etc/ssh/sshd_config ##############"
 #cat /etc/ssh/sshd_config
 
-sed -i "s/listen 80/listen $PORT/g" /usr/local/nginx/conf/nginx.conf
-#sed -i "s/\/home\/wwwroot\/default/\/home\/wwwroot\/www.codewasp.cn\/g" /usr/local/nginx/conf/nginx.conf
+#sed -i "s/listen 80/listen $PORT/g" /usr/local/nginx/conf/nginx.conf
+#/etc/init.d/nginx start
+#/etc/init.d/mysql start
+#/etc/init.d/php-fpm start
 
-/etc/init.d/nginx start
 
-/etc/init.d/mysql start
-
-/etc/init.d/php-fpm start
 	
 while true
 do
@@ -57,6 +55,8 @@ do
   #/usr/sbin/sshd
   #echo "### jupyter-notebook --allow-root --port $PORT ###"
   #jupyter-notebook --allow-root --port $PORT
+  wget --spider -q -T 5 -t 2 http://codewasp.herokuapp.com
+  echo $?
   echo "### ps -aef ###"
   ps -aef
   echo "### netstat -anp ###"
