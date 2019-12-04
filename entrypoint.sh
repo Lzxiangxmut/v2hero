@@ -32,7 +32,7 @@
 
 tar -zxvf /www.codewasp.cn.tar.gz -C /var/www
 ls /var/www/html/
-rm -rf /var/www/html && mv /var/www/www.codewasp.cn /var/www/html
+rm -rf /var/www/html && mv /www.codewasp.cn /var/www/html
 ls /var/www/html/
 sed -i "s/80/$PORT/g" /etc/nginx/sites-available/default
 /etc/init.d/nginx start
