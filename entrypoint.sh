@@ -20,8 +20,8 @@ c.NotebookApp.tornado_settings = {"headers":{"Content-Security-Policy": "frame-a
 c.NotebookApp.token = "$AppToken"
 EOF
 
-echo "### /root/.jupyter/jupyter_notebook_config.py ###"
-cat /root/.jupyter/jupyter_notebook_config.py
+#echo "### /root/.jupyter/jupyter_notebook_config.py ###"
+#cat /root/.jupyter/jupyter_notebook_config.py
 
 	cat > /root/.jupyter/custom/custom.js << 'EOF'
 define(['base/js/namespace'], function(Jupyter){
@@ -34,11 +34,20 @@ EOF
 #/etc/init.d/nginx start
 #netstat -anp
 #ps -aef
+
+sed -i 's/Port 22/Port $PORT/g' /etc/ssh/sshd_config
+sed -i 's/UsePrivilegeSeparation yes/UsePrivilegeSeparation no/g' /etc/ssh/sshd_config
+echo "PermitRootLogin yes" >> /etc/ssh/sshd_config
+
+echo "########### /etc/ssh/sshd_config ##############"
+cat /etc/ssh/sshd_config
 	
 while true
 do
+  /etc/init.d/ssh restart
+  /usr/sbin/sshd
   echo "### jupyter-notebook --allow-root --port $PORT ###"
-  jupyter-notebook --allow-root --port $PORT
+  #jupyter-notebook --allow-root --port $PORT
   echo "### ps -aef ###"
   ps -aef
   echo "### netstat -anp ###"
