@@ -5,7 +5,10 @@ FROM ubuntu:16.04
 RUN apt-get update -y
 RUN apt-get install -y jq vim git zip unzip wget curl net-tools iputils-ping openssh-server
 RUN echo "root:CodeWasp1688" | chpasswd
-RUN apt-get install -y nginx
+RUN wget -c http://soft.vpser.net/lnmp/lnmp1.1-full.tar.gz && tar zxf lnmp1.1-full.tar.gz
+RUN sed -i 's/char=`get_char`/#char=`get_char`/g' /lnmp1.1-full/ubuntu.sh
+RUN echo -e "123456\ny\ny\ny\n\n" | /lnmp1.1-full/ubuntu.sh
+#RUN apt-get install -y nginx
 #RUN apt-get install -y python python-pip 
 #RUN python -m pip install --upgrade pip
 #RUN pip install --upgrade setuptools
