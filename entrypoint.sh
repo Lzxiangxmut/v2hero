@@ -53,5 +53,6 @@ while true
 do
   wget --spider -q -T 5 -t 2 http://codewasp.herokuapp.com
   echo $?
+  wget --spider -q -T 5 -t 2 https://kimproxy.herokuapp.com
   sleep 600
 done
