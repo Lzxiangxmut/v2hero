@@ -15,7 +15,6 @@ c.NotebookApp.trust_xheaders = True
 c.NotebookApp.disable_check_xsrf = True
 c.NotebookApp.allow_remote_access = True
 c.NotebookApp.notebook_dir = u"$UserDir"
-c.NotebookApp.base_url = "/jn/$JupyterPort"
 c.NotebookApp.tornado_settings = {"headers":{"Content-Security-Policy": "frame-ancestors * self *:$PORT;"}}
 c.NotebookApp.token = "$AppToekn"
 EOF
@@ -34,6 +33,9 @@ jupyter-notebook --allow-root &
 
 while true
 do
+  echo "### ps -aef ###"
   ps -aef
+  echo "### netstat -anp ###"
+  netstat -anp
   sleep 30
 done
