@@ -1,6 +1,6 @@
 FROM ubuntu:16.04
 #FROM alpine:latest
-LABEL maintainer="https://github.com/onplus"
+#LABEL maintainer="https://github.com/onplus"
 
 RUN apt-get update -y
 RUN apt-get install -y jq vim git zip unzip wget curl net-tools iputils-ping openssh-server
@@ -10,5 +10,5 @@ RUN apt-get install -y python python-pip
 RUN python -m pip install --upgrade pip
 
 ADD entrypoint.sh /entrypoint.sh
-RUN chmod +x /entrypoint.sh 
+RUN chmod 777 /entrypoint.sh 
 CMD /entrypoint.sh
