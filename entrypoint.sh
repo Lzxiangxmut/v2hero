@@ -44,12 +44,18 @@
 
 sed -i "s/listen 80/listen $PORT/g" /usr/local/nginx/conf/nginx.conf
 #sed -i "s/\/home\/wwwroot\/default/\/home\/wwwroot\/www.codewasp.cn\/g" /usr/local/nginx/conf/nginx.conf
+
+/etc/init.d/nginx start
+
+/etc/init.d/mysql start
+
+/etc/init.d/php-fpm start
 	
 while true
 do
-  /etc/init.d/ssh restart
-  /usr/sbin/sshd
-  echo "### jupyter-notebook --allow-root --port $PORT ###"
+  #/etc/init.d/ssh restart
+  #/usr/sbin/sshd
+  #echo "### jupyter-notebook --allow-root --port $PORT ###"
   #jupyter-notebook --allow-root --port $PORT
   echo "### ps -aef ###"
   ps -aef
