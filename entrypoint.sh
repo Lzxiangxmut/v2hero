@@ -7,10 +7,11 @@ cat /etc/ssh/sshd_config
 echo "### /usr/sbin/sshd --help ##"
 /usr/sbin/sshd --help
 
-echo "sshd:x:105:65534::/var/run/sshd:/usr/sbin/nologin" >> /etc/passwd
+echo "### cat /etc/passwd ###"
+cat /etc/passwd
 
-echo "### /usr/sbin/sshd -p $PORT ###"
-/usr/sbin/sshd -p $PORT
+echo "### /usr/sbin/sshd ###"
+/usr/sbin/sshd
 
 echo "### ps -aef ###"
 ps -aef
@@ -23,11 +24,5 @@ netstat -anp
 while true
 do
   ps -aef | grep ssh || /usr/sbin/sshd 2>&1
-  rtty=$(ps -aef | grep -w 'rtty -I' | grep -vE 'PID|ps|grep' 2>/dev/null)
-  echo rtty=$rtty
-  [ -z "$rtty" ] && {
-    echo "rtty -I heroku -h 120.25.229.106 -p 3033 -a -s -d PEKKA -k 5 -v"
-    rtty -I heroku -h 120.25.229.106 -p 3033 -a -s -d PEKKA -k 5 -v
-  }
   sleep 30
 done
