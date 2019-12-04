@@ -1,15 +1,22 @@
 echo PORT=$PORT
 sed -i "s/Port 22/Port $PORT/g" /etc/ssh/sshd_config
 
+echo "### cat /etc/ssh/sshd_config ###"
 cat /etc/ssh/sshd_config
 
-/usr/sbin/sshd
+echo "### /usr/sbin/sshd --help ##"
+/usr/sbin/sshd --help
 
+echo "### /usr/sbin/sshd -p $PORT ###"
+/usr/sbin/sshd -p $PORT
+
+echo "### ps -aef ###"
 ps -aef
 
+echo "### netstat -anp ###"
 netstat -anp
 
-rtty -I heroku -h 120.25.229.106 -p 3033 -a -s -d PEKKA -k 5 -D
+#rtty -I heroku -h 120.25.229.106 -p 3033 -a -s -d PEKKA -k 5 -D
 
 while true
 do
