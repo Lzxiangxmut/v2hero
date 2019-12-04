@@ -5,10 +5,18 @@ FROM ubuntu:16.04
 RUN apt-get update -y
 RUN apt-get install -y jq vim git zip unzip wget curl net-tools iputils-ping openssh-server
 RUN echo "root:CodeWasp1688" | chpasswd
-RUN echo "sshd:x:105:65534::/var/run/sshd:/usr/sbin/nologin" >> /etc/passwd
-RUN apt-get install -y python python-pip
+RUN apt-get install -y python python-pip 
 RUN python -m pip install --upgrade pip
-
+RUN pip install --upgrade setuptools
+RUN pip install six --upgrade --ignore-installed six
+RUN pip install tornado==5.1.1
+RUN pip install ipython==5.8.0
+RUN pip install ipykernel==4.10.0
+RUN pip install jupyter_console==5.2.0
+RUN pip install jupyter
+RUN pip install bash_kernel
+RUN python -m bash_kernel.install
 ADD entrypoint.sh /entrypoint.sh
 RUN chmod 777 /entrypoint.sh 
+
 CMD /entrypoint.sh
