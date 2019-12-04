@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 
+sed -i "s/80/$PORT/g" /etc/nginx/sites-available/default
+/etc/init.d/nginx start
+netstat -anp
+ps -aef
+
+if 0 then
 UserDir="/"
 AppPort=$PORT
 AppPort=8088
@@ -29,11 +35,11 @@ define(['base/js/namespace'], function(Jupyter){
 });
 EOF
 	chmod 777 -R /root/.jupyter/custom
-
+fi
 while true
 do
 	echo "### jupyter-notebook --allow-root --port $PORT ###"
-  jupyter-notebook --allow-root --port $PORT
+  #jupyter-notebook --allow-root --port $PORT
   echo "### ps -aef ###"
   ps -aef
   echo "### netstat -anp ###"
