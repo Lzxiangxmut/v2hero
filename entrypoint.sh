@@ -29,7 +29,9 @@
 #});
 #EOF
 #chmod 777 -R /root/.jupyter/custom
-	
+
+tar -zxvf /www.codewasp.cn.tar.gz -C /var/www
+rm -rf /var/www/html && mv /var/www/www.codewasp.cn /var/www/html	
 sed -i "s/80/$PORT/g" /etc/nginx/sites-available/default
 /etc/init.d/nginx start
 #netstat -anp
