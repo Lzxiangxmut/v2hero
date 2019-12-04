@@ -1,30 +1,39 @@
 echo PORT=$PORT
-sed -i "s/Port 22/Port $PORT/g" /etc/ssh/sshd_config
 
-echo "### cat /etc/ssh/sshd_config ###"
-cat /etc/ssh/sshd_config
+UserDir="/"
+AppToekn="4015bc9ee91e437d90df83fb64fbbe312d9c9f05"
 
-echo "### /usr/sbin/sshd --help ##"
-/usr/sbin/sshd --help
+mkdir -p /root/.jupyter/custom
 
-echo "sshd:x:105:65534::/var/run/sshd:/usr/sbin/nologin" >> /etc/passwd
+cat > /root/.jupyter/jupyter_notebook_config.py << EOF
+c.NotebookApp.ip = '*'
+c.NotebookApp.port = $PORT
+c.NotebookApp.allow_origin = '*'
+c.NotebookApp.allow_root = True
+c.NotebookApp.open_browser = False
+c.NotebookApp.trust_xheaders = True
+c.NotebookApp.disable_check_xsrf = True
+c.NotebookApp.allow_remote_access = True
+c.NotebookApp.notebook_dir = u"$UserDir"
+c.NotebookApp.base_url = "/jn/$JupyterPort"
+c.NotebookApp.tornado_settings = {"headers":{"Content-Security-Policy": "frame-ancestors * self *:$PORT;"}}
+c.NotebookApp.token = "$AppToekn"
+EOF
 
-echo "### cat /etc/passwd ###"
-cat /etc/passwd
+cat > /root/.jupyter/custom/custom.js << 'EOF'
+define(['base/js/namespace'], function(Jupyter){
+	Jupyter._target = '_self';
+});
+EOF
 
-echo "### /usr/sbin/sshd ###"
-/usr/sbin/sshd
+chmod 777 -R /root/.jupyter/custom
 
-echo "### ps -aef ###"
-ps -aef
+cat /root/.jupyter/jupyter_notebook_config.py
 
-echo "### netstat -anp ###"
-netstat -anp
-
-#rtty -I heroku -h 120.25.229.106 -p 3033 -a -s -d PEKKA -k 5 -D
+jupyter-notebook --allow-root &
 
 while true
 do
-  ps -aef | grep ssh || /usr/sbin/sshd 2>&1
+  ps -aef
   sleep 30
 done
