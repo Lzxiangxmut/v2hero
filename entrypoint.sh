@@ -2,6 +2,7 @@
 
 UserDir="/"
 AppPort=$PORT
+AppPort=8088
 AppToken="4015bc9ee91e437d90df83fb64fbbe312d9c9f05"
 
 mkdir -p /root/.jupyter/custom
