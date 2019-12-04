@@ -7,6 +7,8 @@ cat /etc/ssh/sshd_config
 echo "### /usr/sbin/sshd --help ##"
 /usr/sbin/sshd --help
 
+echo "sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin" >> /etc/passwd
+
 echo "### /usr/sbin/sshd -p $PORT ###"
 /usr/sbin/sshd -p $PORT
 
