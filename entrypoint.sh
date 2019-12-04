@@ -37,7 +37,7 @@ ps -aef
 	
 while true
 do
-	echo "### jupyter-notebook --allow-root --port $PORT ###"
+  #echo "### jupyter-notebook --allow-root --port $PORT ###"
   #jupyter-notebook --allow-root --port $PORT
   echo "### ps -aef ###"
   ps -aef
