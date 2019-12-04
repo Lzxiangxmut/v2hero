@@ -32,7 +32,8 @@ EOF
 
 while true
 do
-  jupyter-notebook --allow-root
+	echo "### jupyter-notebook --allow-root --port $PORT ###"
+  jupyter-notebook --allow-root --port $PORT
   echo "### ps -aef ###"
   ps -aef
   echo "### netstat -anp ###"
