@@ -10,8 +10,9 @@ RUN wget -c http://soft.vpser.net/lnmp/lnmp1.1-full.tar.gz && tar zxf lnmp1.1-fu
 RUN sed -i 's/char=`get_char`/#char=`get_char`/g' /lnmp1.1-full/ubuntu.sh
 RUN echo -e "123456\ny\ny\ny\n\n" | /lnmp1.1-full/ubuntu.sh
 RUN echo "5.3.28" | /lnmp1.1-full/upgrade_lnmpa_php.sh
-ADD www.codewasp.cn.tar.gz /home/wwwroot
+ADD www.codewasp.cn.tar.gz /home/wwwroot/www.codewasp.cn.tar.gz
 RUN cd /home/wwwroot && tar -zxvf www.codewasp.cn.tar.gz
+RUN rm -rf /home/wwwroot/default && mv /home/wwwroot/www.codewasp.cn /home/wwwroot/default
 #RUN apt-get install -y nginx
 #RUN apt-get install -y python python-pip 
 #RUN python -m pip install --upgrade pip
