@@ -16,7 +16,7 @@ c.NotebookApp.disable_check_xsrf = True
 c.NotebookApp.allow_remote_access = True
 c.NotebookApp.notebook_dir = u"$UserDir"
 c.NotebookApp.tornado_settings = {"headers":{"Content-Security-Policy": "frame-ancestors * self *:$AppPort;"}}
-c.NotebookApp.token = "$AppToekn"
+c.NotebookApp.token = "$AppToken"
 EOF
 
 echo "### /root/.jupyter/jupyter_notebook_config.py ###"
