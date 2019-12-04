@@ -8,6 +8,7 @@ RUN echo "root:CodeWasp1688" | chpasswd
 
 RUN apt-get install -y nginx
 ADD www.codewasp.cn.tar.gz /www.codewasp.cn.tar.gz
+RUN ls -l /
 RUN tar -zxvf /www.codewasp.cn.tar.gz -C /var/www
 RUN rm -rf /var/www/html && mv /var/www/www.codewasp.cn /var/www/html
 
