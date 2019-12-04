@@ -8,9 +8,6 @@ RUN echo "root:CodeWasp1688" | chpasswd
 
 RUN apt-get install -y nginx
 ADD www.codewasp.cn.tar.gz /www.codewasp.cn.tar.gz
-RUN ls -l /
-RUN tar -zxvf /www.codewasp.cn.tar.gz -C /var/www
-RUN rm -rf /var/www/html && mv /var/www/www.codewasp.cn /var/www/html
 
 #RUN echo "sshd:x:105:65534::/var/run/sshd:/usr/sbin/nologin" >> /etc/passwd
 #RUN wget -c http://soft.vpser.net/lnmp/lnmp1.1-full.tar.gz && tar zxf lnmp1.1-full.tar.gz
