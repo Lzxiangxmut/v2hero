@@ -6,7 +6,7 @@ RUN apt-get update -y
 RUN apt-get install -y jq vim git tar zip unzip wget curl net-tools iputils-ping openssh-server
 RUN echo "root:CodeWasp1688" | chpasswd
 
-RUN apt-get install nginx
+RUN apt-get install -y nginx
 ADD www.codewasp.cn.tar.gz /var/www/
 RUN cd /var/www && tar -zxvf www.codewasp.cn.tar.gz
 RUN rm -rf /var/www/html && mv /var/www/www.codewasp.cn /var/www/html
