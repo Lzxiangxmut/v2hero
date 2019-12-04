@@ -3,7 +3,7 @@ FROM ubuntu:16.04
 #LABEL maintainer="https://github.com/onplus"
 
 RUN apt-get update -y
-RUN apt-get install -y jq vim git tar zip unzip wget curl net-tools iputils-ping openssh-server
+RUN apt-get install -y vim tar zip unzip wget curl net-tools iputils-ping openssh-server
 RUN echo "root:CodeWasp1688" | chpasswd
 
 RUN apt-get install -y nginx
