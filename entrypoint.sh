@@ -30,15 +30,6 @@
 #EOF
 #chmod 777 -R /root/.jupyter/custom
 
-tar -zxvf /www.codewasp.cn.tar.gz -C /var/www
-ls /var/www/html/
-rm -rf /var/www/html && mv /www.codewasp.cn /var/www/html
-ls /var/www/html/
-sed -i "s/80/$PORT/g" /etc/nginx/sites-available/default
-/etc/init.d/nginx start
-#netstat -anp
-#ps -aef
-
 #sed -i 's/Port 22/Port $PORT/g' /etc/ssh/sshd_config
 #sed -i 's/UsePrivilegeSeparation yes/UsePrivilegeSeparation no/g' /etc/ssh/sshd_config
 #echo "PermitRootLogin yes" >> /etc/ssh/sshd_config
@@ -52,18 +43,15 @@ sed -i "s/80/$PORT/g" /etc/nginx/sites-available/default
 #/etc/init.d/php-fpm start
 
 
+rm -rf /var/www/html && mv /www.codewasp.cn /var/www/html
+ls /var/www/html/
+sed -i "s/80/$PORT/g" /etc/nginx/sites-available/default
+/etc/init.d/nginx start
+
 	
 while true
 do
-  #/etc/init.d/ssh restart
-  #/usr/sbin/sshd
-  #echo "### jupyter-notebook --allow-root --port $PORT ###"
-  #jupyter-notebook --allow-root --port $PORT
   wget --spider -q -T 5 -t 2 http://codewasp.herokuapp.com
   echo $?
-  echo "### ps -aef ###"
-  ps -aef
-  echo "### netstat -anp ###"
-  netstat -anp
-  sleep 30
+  sleep 600
 done
