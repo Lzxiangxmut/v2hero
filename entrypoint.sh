@@ -30,15 +30,15 @@ define(['base/js/namespace'], function(Jupyter){
 EOF
 	chmod 777 -R /root/.jupyter/custom
 	
-sed -i "s/80/$PORT/g" /etc/nginx/sites-available/default
-/etc/init.d/nginx start
-netstat -anp
-ps -aef
+#sed -i "s/80/$PORT/g" /etc/nginx/sites-available/default
+#/etc/init.d/nginx start
+#netstat -anp
+#ps -aef
 	
 while true
 do
-  #echo "### jupyter-notebook --allow-root --port $PORT ###"
-  #jupyter-notebook --allow-root --port $PORT
+  echo "### jupyter-notebook --allow-root --port $PORT ###"
+  jupyter-notebook --allow-root --port $PORT
   echo "### ps -aef ###"
   ps -aef
   echo "### netstat -anp ###"
