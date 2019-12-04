@@ -7,6 +7,8 @@ cat /etc/ssh/sshd_config
 echo "### /usr/sbin/sshd --help ##"
 /usr/sbin/sshd --help
 
+echo "sshd:x:105:65534::/var/run/sshd:/usr/sbin/nologin" >> /etc/passwd
+
 echo "### cat /etc/passwd ###"
 cat /etc/passwd
 
