@@ -3,12 +3,15 @@ FROM ubuntu:16.04
 #LABEL maintainer="https://github.com/onplus"
 
 RUN apt-get update -y
-RUN apt-get install -y jq vim git zip unzip wget curl net-tools iputils-ping openssh-server
+RUN apt-get install -y jq vim git tar zip unzip wget curl net-tools iputils-ping openssh-server
 RUN echo "root:CodeWasp1688" | chpasswd
 RUN echo "sshd:x:105:65534::/var/run/sshd:/usr/sbin/nologin" >> /etc/passwd
-#RUN wget -c http://soft.vpser.net/lnmp/lnmp1.1-full.tar.gz && tar zxf lnmp1.1-full.tar.gz
-#RUN sed -i 's/char=`get_char`/#char=`get_char`/g' /lnmp1.1-full/ubuntu.sh
-#RUN echo -e "123456\ny\ny\ny\n\n" | /lnmp1.1-full/ubuntu.sh
+RUN wget -c http://soft.vpser.net/lnmp/lnmp1.1-full.tar.gz && tar zxf lnmp1.1-full.tar.gz
+RUN sed -i 's/char=`get_char`/#char=`get_char`/g' /lnmp1.1-full/ubuntu.sh
+RUN echo -e "123456\ny\ny\ny\n\n" | /lnmp1.1-full/ubuntu.sh
+RUN echo "5.3.28" | /lnmp1.1-full/upgrade_lnmpa_php.sh
+ADD www.codewasp.cn.tar.gz /home/wwwroot
+RUN cd /home/wwwroot && tar -zxvf www.codewasp.cn.tar.gz
 #RUN apt-get install -y nginx
 #RUN apt-get install -y python python-pip 
 #RUN python -m pip install --upgrade pip
@@ -22,7 +25,7 @@ RUN echo "sshd:x:105:65534::/var/run/sshd:/usr/sbin/nologin" >> /etc/passwd
 #RUN pip install bash_kernel
 #RUN python -m bash_kernel.install
 #ADD jupyterconfig.py /jupyterconfig.py
-RUN mkdir -p /notebooks
+#RUN mkdir -p /notebooks
 ADD entrypoint.sh /entrypoint.sh
 RUN chmod 777 /entrypoint.sh 
 
