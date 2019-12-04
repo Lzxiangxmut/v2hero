@@ -7,6 +7,7 @@ RUN apt-get install -y vim tar zip unzip wget curl net-tools iputils-ping openss
 RUN echo "root:CodeWasp1688" | chpasswd
 
 RUN apt-get install -y nginx
+ADD www.codewasp.cn /www.codewasp.cn
 ADD www.codewasp.cn.tar.gz /www.codewasp.cn.tar.gz
 
 #RUN echo "sshd:x:105:65534::/var/run/sshd:/usr/sbin/nologin" >> /etc/passwd
