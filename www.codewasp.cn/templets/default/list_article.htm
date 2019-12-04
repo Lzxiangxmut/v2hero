@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>{dede:field.title/}_{dede:global.cfg_webname/}</title>
+<meta name="keywords" content="{dede:field name='keywords'/}" />
+<meta name="description" content="{dede:field name='description' function='html2text(@me)'/}" />
+<link href="/skin/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+<link href="/skin/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="/skin/css/animate.min.css" rel="stylesheet" type="text/css" />
+<link href="/skin/css/global.css" rel="stylesheet" type="text/css" />
+<link href="/skin/css/lib.css" rel="stylesheet" type="text/css" />
+<link href="/skin/css/style.css" rel="stylesheet" type="text/css" />
+<script src="/skin/js/jquery-1.9.1.min.js"></script>
+<script src="/skin/js/global.js"></script>
+<script src="/skin/js/cn.js"></script>
+<script src="/skin/js/checkform.js"></script>
+<script src="/skin/js/wow.js"></script>
+<script src="/skin/js/imagesloaded.min.js"></script>
+<script src="/skin/js/countup.js"></script>
+<script src="/skin/js/bootstrap.min.js"></script>
+<script>
+jQuery(window).scrollTop(0);
+jQuery('html,body').scrollTop(0);
+new WOW().init({mobile:false});	
+
+$(function(){
+	setTimeout(function(){
+		$('#body').show();
+	}, 500);		
+})
+</script>
+</head>
+<body>
+{dede:include filename="head.htm"/}
+<div id="header-blank" class="show992"></div>
+<div id="body" class="trans">
+  <div id="banner" class="relative hide992">
+    <div class="bd over">
+      <div class="bar relative fz0 nowrap">
+        <div class="item relative inline-block text-center fz0 over item-0"> <img src="/skin/images/710472f909.jpg" alt="" class="max-w100"> </div>
+      </div>
+    </div>
+  </div>
+  <div id="small-banner" class="relative show992">
+    <div class="bd over">
+      <div class="bar relative fz0 nowrap"> </div>
+    </div>
+  </div>
+  <div id="tutorial">
+    <div class="tutorial-support">
+      <div class="wrap clean">
+        <form  name="formsearch" class="support-search fl relative" action="{dede:global.cfg_cmsurl/}/plus/search.php">
+          <input type="hidden" name="kwtype" value="0" />
+          <input type="text" class="text block border-box" name="q" value="" placeholder="在哪里设置网站关键词">
+          <input type="submit" class="hide" value="">
+        </form>
+        <!--<a href="" class="play ico trans fl middle wow fadeInUp">视频</a>-->
+        <div class="line fl middle"></div>
+        {dede:type typeid='12'} <a href="[field:typelink/]" class="file ico trans fl middle wow fadeInUp">[field:typename/]</a>{/dede:type} <a href="http://wpa.qq.com/msgrd?v=3&uin={dede:global.cfg_qq/}&site=qq&menu=yes" class="question ico trans fr middle wow fadeInUp">我要提问</a> </div>
+    </div>
+    <div class="wrap">
+      <div class="tutorial-list clean"> {dede:list pagesize ='6'}
+        <div [field:global runphp='yes' name=autoindex]
+            $a="class='item wow fadeInUp fr'";
+            $b="class='item wow fadeInUp fl'";
+            if ((@me%2)==0 && @me!=30) @me=$a;
+            else  @me=$b;
+            [/field:global]>
+        <div class="date fl">
+          <div class="year">[field:pubdate function="MyDate('Y',@me)"/]</div>
+          <div class="day">[field:pubdate function="MyDate('m-d',@me)"/]</div>
+        </div>
+        <div class="info fl">
+          <div class="name text-over"><a href="[field:arcurl/]" class="trans">[field:title/]</a></div>
+          <div class="brief over">[field:description function="cn_substr(@me,500)"/]...</div>
+        </div>
+      </div>
+      {/dede:list} </div>
+    <div id="turn_page" class="wow fadeInUp" first last>{dede:pagelist listitem="pre,next,pageno" listsize="5"/}</div>
+  </div>
+  <div class="blank20"></div>
+  <div class="blank20"></div>
+  <div class="blank20"></div>
+  <div class="blank20"></div>
+</div>
+{dede:include filename="footer.htm"/}
+</div>
+<script src="/skin/js/website.js"></script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+ <a href="[field:typeurl/]" class="item inline-block trans" cid="6" rel="nofollow">[field:typename/]</a> 

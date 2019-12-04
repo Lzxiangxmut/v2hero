@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rss version="2.0">
+<channel>
+<title>管理平台</title>
+<link>http://120.25.229.106:8880/a/chanpin/shejijianzhu/</link>
+<description>产品 / 管理平台</description>
+<language>zh-cn</language>
+<generator><![CDATA[Copyright © 2016 深圳市码锋智能科技有限公司 版权所有 &lt;a href=&quot;http://www.dede58.com&quot; target=&quot;_blank&quot;&gt;Power by DeDe58&lt;/a&gt;]]></generator>
+<webmaster>desdev@vip.qq.com</webmaster>
+<item>
+    <title><![CDATA[码锋设备管理平台]]></title>
+    <link>http://120.25.229.106:8880/a/chanpin/shejijianzhu/87.html</link>
+    <description><![CDATA[设备管理平台功能： A、群组管理 B、设备管理：设备型号、设备资产、设备状态 C、文件管理：文件类型、文件列表、升级任务、更新记录 D、警告管理：警告配置、警告列表、历史警告]]></description>
+    <pubDate>2019-09-11</pubDate>
+    <category>管理平台</category>
+    <author>admin</author>
+    <comments>未知</comments>
+</item>
+<item>
+    <title><![CDATA[码锋WIFI认证平台]]></title>
+    <link>http://120.25.229.106:8880/a/chanpin/shejijianzhu/86.html</link>
+    <description><![CDATA[码锋WIFI认证平台是路由器云端控制系统，轻松实现无线登陆手机认证，微信认证，一键上网，广告控制系统，营销系统一体集成的云端控制系统。 用户连接您的WiFi首先会跳转到您设置]]></description>
+    <pubDate>2019-09-11</pubDate>
+    <category>管理平台</category>
+    <author>admin</author>
+    <comments>未知</comments>
+</item>
+
+</channel>
+</rss>

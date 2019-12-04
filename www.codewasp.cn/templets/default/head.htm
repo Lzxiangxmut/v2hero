@@ -1,0 +1,20 @@
+<header class="trans border-box  ">
+  <div class="wrap clean relative">
+    <div id="logo" class="fl relative trans"> <a href="/" class="relative trans"><img src="/skin/images/logo.png" alt="" class="max-w100 max-h100 trans"></a> </div>
+    <nav class="absolute fz0 trans border-box stopP ">
+      <div class="bd over clean">
+        <div class="title clean show992"><a href="javascript:;" class="btn-close trans middle fr" onclick="ActionMenu('Close');"></a></div>
+        <div class="nav-item fl text-center trans"><a href="/" {dede:field name=typeid runphp="yes"}(@me=="")? @me=" class='on trans' ":@me="";{/dede:field}>首页</a></div>
+        {dede:channel type='top' currentstyle="
+        <div class='nav-item fl text-center trans'><a href='~typelink~' class='on trans'>~typename~</a></div>
+        "}
+        <div class="nav-item fl text-center trans"><a href="[field:typeurl/]">[field:typename/]</a></div>
+        {/dede:channel} 
+        
+        <!--<div class="member show992 clean"> <a href="" class="login member-btn fl content-box text-center trans"><i></i>登录</a> <a href="" class="try member-btn fl content-box text-center trans">注册账号</a> </div>--> 
+      </div>
+    </nav>
+    <!--<div class="header-user fr"> <a href="" class="login inline-block text-center border-box trans hide992" rel="nofollow"><i></i>登录</a> <a href="" class="try inline-block text-center border-box trans hide992" rel="nofollow">注册账号</a> </div>-->
+    <div class="menu-button fr stopP show992 trans"><a href="javascript:;" class="fa fa-align-justify trans" rel="nofollow" onclick="ActionMenu();"></a></div>
+  </div>
+</header>

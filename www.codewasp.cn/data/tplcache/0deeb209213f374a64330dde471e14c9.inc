@@ -1,0 +1,1 @@
+<a href="[field:typelink/]" class="file ico trans inline-block middle">[field:typename/]</a>

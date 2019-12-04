@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rss version="2.0">
+<channel>
+<title>无线DTU</title>
+<link>http://120.25.229.106:8880/a/chanpin/jiajifangchan/</link>
+<description>产品 / 无线DTU</description>
+<language>zh-cn</language>
+<generator><![CDATA[Copyright © 2016 深圳市码锋智能科技有限公司 版权所有 &lt;a href=&quot;http://www.dede58.com&quot; target=&quot;_blank&quot;&gt;Power by DeDe58&lt;/a&gt;]]></generator>
+<webmaster>desdev@vip.qq.com</webmaster>
+<item>
+    <title><![CDATA[4G工业DTU【CW-D3303】]]></title>
+    <link>http://120.25.229.106:8880/a/chanpin/jiajifangchan/81.html</link>
+    <description><![CDATA[功能： 通信功能：支持GPRS/CDMA和短消息双通道传输数据；支持与多中心进行数据通信。 采集功能：采集串口设备数据，如串口仪表、采集器、PLC等。 远程管理功能：支持远程参数设置]]></description>
+    <pubDate>2019-09-11</pubDate>
+    <category>无线DTU</category>
+    <author>admin</author>
+    <comments>未知</comments>
+</item>
+<item>
+    <title><![CDATA[GPRS工业DTU【CW-D3301】]]></title>
+    <link>http://120.25.229.106:8880/a/chanpin/jiajifangchan/80.html</link>
+    <description><![CDATA[GPRS DTU是一种物联网无线数据终端，利用公用运营商网络GPRS网络(又称G网)为用户提供无线长距离数据传输功能. 采用高性能的工业级8/16/32位通信处理器和工业级 无线模块 ，以 嵌入式实]]></description>
+    <pubDate>2019-09-11</pubDate>
+    <category>无线DTU</category>
+    <author>admin</author>
+    <comments>未知</comments>
+</item>
+<item>
+    <title><![CDATA[3G无线DTU【CW-D3302】]]></title>
+    <link>http://120.25.229.106:8880/a/chanpin/jiajifangchan/79.html</link>
+    <description><![CDATA[功能： 通信功能：支持GPRS/CDMA和短消息双通道传输数据；支持与多中心进行数据通信。 采集功能：采集串口设备数据，如串口仪表、采集器、PLC等。 远程管理功能：支持远程参数设置]]></description>
+    <pubDate>2019-09-11</pubDate>
+    <category>无线DTU</category>
+    <author>admin</author>
+    <comments>未知</comments>
+</item>
+
+</channel>
+</rss>

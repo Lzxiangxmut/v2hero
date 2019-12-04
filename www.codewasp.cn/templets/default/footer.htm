@@ -1,0 +1,52 @@
+<footer>
+  <div class="blank15"></div>
+  <div class="blank15"></div>
+  <div class="wrap clean">
+    <div class="left fl">
+      <div class="title wow fadeInUp">{dede:global.cfg_gg/}</div>
+      <div class="hotline wow fadeInUp">{dede:global.cfg_tel/}  {dede:global.cfg_rexian/}</div>
+      <div class="address wow fadeInUp">{dede:global.cfg_add/}   <!--<a href="http://www.miitbeian.gov.cn/" target="_blank">{dede:global.cfg_beian/}</a> <a target="_blank" href="http://www.beian.gov.cn/" style="display:inline-block;"><img src="/skin/images/govbeian.png" align="absmiddle"/> 粤公网安备 {dede:global.cfg_bei/}号</a>--></div>
+    </div>
+    <div class="follow fr fz0">
+      <div class="title relative text-center wow fadeInUp"><span class="relative">关注</span></div>
+      <div class="text-center">
+        <div class="item text-center inline-block wow fadeInUp"><a href="http://wpa.qq.com/msgrd?v=3&uin={dede:global.cfg_qq/}&site=qq&menu=yes" class="ico block trans qq" rel="nofollow"><i class="fa fa-qq middle trans" onclick="popService(service2);"></i></a>QQ</div>
+        <div class="item text-center inline-block wow fadeInUp relative"><a href="javascript:;" class="ico block trans wechat" rel="nofollow"><i class="fa fa-weixin middle trans"></i></a>微信
+          <div class="qrcode absolute trans"><img src="/skin/images/erweima.png" alt="" width="200" /></div>
+        </div>
+        <!--<div class="item text-center inline-block wow fadeInUp"><a href="{dede:global.cfg_weibo/}" class="ico block trans sina" rel="nofollow" target="_blank"><i class="fa fa-weibo middle trans"></i></a>微博</div>-->
+      </div>
+    </div>
+  </div>
+  <div class="blank20"></div>
+  <div class="blank15"></div>
+  <!--
+  <div class="bottom">
+    <div class="wrap clean">
+      <div class="links fl"> 友情链接 : {dede:flink titlelen='20' row='20' type='text'}   [field:link /]  {/dede:flink} </div>
+      <div class="copyright fr">{dede:global.cfg_powerby/} {dede:global.cfg_beian/}</div>
+    </div>
+  </div>
+-->
+</footer>
+<div id="follow">
+  <div id="openHotline" class="item relative hide992" row="2"> <a href="javascript:;" class="ico orange block absolute" title="服务热线" onclick="OptHot(1);OptQrcode(0);OptOnline(0);" rel="nofollow"></a>
+    <div id="hotline">
+      <div class="top clean">服务热线 <a href="javascript:;" class="fr fa fa-times" title="隐藏热线" onclick="OptHot(0);" rel="nofollow"></a></div>
+      <div class="qq-list"> <a class="list block trans">{dede:global.cfg_tel/}</a> <a class="list block trans">{dede:global.cfg_rexian/}</a> </div>
+    </div>
+  </div>
+  <div id="openOnline" class="item relative hide992" row="2"> <a href="javascript:;" class="ico blue block absolute" title="在线咨询" onclick="OptOnline(1);OptQrcode(0);OptHot(0);" rel="nofollow"> <span class="middle fa fa-qq fa-2x"></span> </a>
+    <div id="online">
+      <div class="top clean">在线咨询 <a href="javascript:;" class="fr fa fa-times" title="隐藏咨询" onclick="OptOnline(0);" rel="nofollow"></a></div>
+      <div class="qq-list"> <a href="http://wpa.qq.com/msgrd?v=3&uin={dede:global.cfg_qq/}&site=qq&menu=yes" class="list block trans" title="咨询TA" target="_blank" rel="nofollow" d="{dede:global.cfg_qq/}" > <span class="fa fa-qq trans"></span>资深顾问 </a> 
+        					<a href="http://wpa.qq.com/msgrd?v=3&uin={dede:global.cfg_qq/}&site=qq&menu=yes" class="list block trans" title="咨询TA" target="_blank" rel="nofollow" d="{dede:global.cfg_qq/}" > <span class="fa fa-qq trans"></span>资深顾问 </a> </div>
+    </div>
+  </div>
+  <div class="item relative show992 trans"> <a href="tel:{dede:global.cfg_tel/}" class="ico blue block trans phone" rel="nofollow"></a> </div>
+  <!--<div class="item relative trans"> <a href="{dede:global.cfg_weibo/}" class="ico red block trans sina" title="关注微博" target="_blank" rel="nofollow"> <span class="middle fa fa-weibo fa-2x"></span> </a> </div>-->
+  <div id="openQrcode" class="item relative trans"> <a href="javascript:;" class="ico green block trans wechat" title="关注微信" onclick="OptQrcode();OptOnline(0)" rel="nofollow"> <span class="middle fa fa-weixin fa-2x"></span> </a>
+    <div id="wechat-qrcode"><img src="/skin/images/erweima.png" alt="" width="200" /></div>
+  </div>
+  <div class="item relative"> <a href="javascript:;" class="ico block trans totop show totop" title="回到顶部" onclick="toTop();" rel="nofollow"> <span class="middle fa fa-angle-up fa-2x"></span> </a> </div>
+</div>

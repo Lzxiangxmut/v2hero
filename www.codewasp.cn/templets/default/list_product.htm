@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>{dede:field.title/}_{dede:global.cfg_webname/}</title>
+<meta name="keywords" content="{dede:field name='keywords'/}" />
+<meta name="description" content="{dede:field name='description' function='html2text(@me)'/}" />
+<link href="/skin/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+<link href="/skin/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="/skin/css/animate.min.css" rel="stylesheet" type="text/css" />
+<link href="/skin/css/global.css" rel="stylesheet" type="text/css" />
+<link href="/skin/css/lib.css" rel="stylesheet" type="text/css" />
+<link href="/skin/css/style.css" rel="stylesheet" type="text/css" />
+<script src="/skin/js/jquery-1.9.1.min.js"></script>
+<script src="/skin/js/global.js"></script>
+<script src="/skin/js/cn.js"></script>
+<script src="/skin/js/checkform.js"></script>
+<script src="/skin/js/wow.js"></script>
+<script src="/skin/js/imagesloaded.min.js"></script>
+<script src="/skin/js/countup.js"></script>
+<script src="/skin/js/bootstrap.min.js"></script>
+<script>
+jQuery(window).scrollTop(0);
+jQuery('html,body').scrollTop(0);
+new WOW().init({mobile:false});	
+
+$(function(){
+	setTimeout(function(){
+		$('#body').show();
+	}, 500);		
+})
+</script>
+<link href="/skin/css/member.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/skin/js/member.js"></script>
+</head>
+<body>
+{dede:include filename="head.htm"/}
+<div id="header-blank" class="show992"></div>
+<div id="body" class="trans">
+<div id="banner" class="relative hide992">
+  <div class="bd over">
+    <div class="bar relative fz0 nowrap">
+      <div class="item relative inline-block text-center fz0 over item-0"> <img src="/skin/images/2620184e5e.jpg" alt="" class="max-w100"> </div>
+    </div>
+  </div>
+</div>
+<div class="blank15"></div>
+<div id="products">
+  <div class="category-list text-center fz0 hide992 wow fadeInUp"> {dede:channel type='son' currentstyle="<a href='~typelink~' class='item inline-block trans on'>~typename~</a>"} <a href="[field:typeurl/]" class="item inline-block trans ">[field:typename/]</a> {/dede:channel} </div>
+  <div class="category-list text-center show992 wow fadeInUp">
+    <div class="btn-group">
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> {dede:field name='typename'/} <span class="caret"></span> </button>
+      <ul class="dropdown-menu">
+        {dede:channel type='son' currentstyle="
+        <li><a href='~typelink~' class='thisclass'>~typename~</a></li>
+        "}
+        <li><a href="[field:typeurl/]" cid="1" rel="nofollow">[field:typename/]</a></li>
+        {/dede:channel}
+      </ul>
+    </div>
+  </div>
+  <div class="products-bg trans">
+    <div class="wrap">
+      <div id="products-box">
+        <div class="products-list relative fz0"> {dede:list pagesize ='6'}
+          
+          [field:global runphp='yes' name=autoindex]
+          $a="
+          <div class='item inline-block relative wow fadeInUp last'>";
+            $b="
+            <div class='item inline-block relative wow fadeInUp'>";
+              if ((@me%3)==0 && @me!=18)  @me=$a;
+              else  @me=$b;
+              [/field:global]
+              <div class="main">
+                <div class="cover scale relative"> <img src="/skin/images/notebook.png" alt="[field:title/]" class="trans scale-img max-w100">
+                  <a href="[field:arcurl/]">
+                  <div class="img absolute text-center fz0"><img src="[field:picname/]" alt="[field:title/]" class="trans scale-img"></div>
+                  </a>
+                  <!--<div class="opt absolute trans over hide768">
+                    <div class="button-bg border-box clean"> <a href="[field:arcurl/]" class="button fl trans text-center" rel="nofollow">预览</a> <a href="[field:arcurl/]" class="links fr trans"><i></i>详细</a> </div>
+                  </div>-->
+                </div>
+                <div class="info clean">
+                  <div class="left fl">
+                    <div class="name">[field:title/]</div>
+                    <div class="category"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="mask trans"></div>
+              <div class="opt-msg trans over"> <a href="[field:arcurl/]" class="block trans text-center" rel="nofollow">预览</a> <a href="[field:arcurl/]" class="block trans text-center"><i></i>详细</a> </div>
+            </div>
+            {/dede:list} </div>
+          <div id="turn_page" class="wow fadeInUp" first last>{dede:pagelist listitem="pre,next,pageno" listsize="5"/}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="blank25"></div>
+  <div class="blank25"></div>
+  <div class="blank25"></div>
+  <div class="blank25"></div>
+  <div class="text-center">
+    <div class="try-button-box wrap fz0"> <a href="http://wpa.qq.com/msgrd?v=3&uin={dede:global.cfg_qq/}&site=qq&menu=yes" target="_blank" class="button inline-block text-center trans wow fadeInUp">我要私人定制</a> </div>
+  </div>
+  <div class="blank25"></div>
+  <div class="blank25"></div>
+  <div class="blank25"></div>
+  <div class="blank25"></div>
+  {dede:include filename="footer.htm"/}</div>
+<script src="/skin/js/website.js"></script>
+</body>
+</html>

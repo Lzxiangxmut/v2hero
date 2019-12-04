@@ -1,0 +1,1 @@
+ <a href="[field:typeurl/]" class="item inline-block trans ">[field:typename/]</a> 
