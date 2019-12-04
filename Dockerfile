@@ -17,6 +17,7 @@ RUN pip install jupyter
 RUN pip install bash_kernel
 RUN python -m bash_kernel.install
 ADD entrypoint.sh /entrypoint.sh
+ADD jupyterconfig.py /jupyterconfig.py
 RUN chmod 777 /entrypoint.sh 
 
 CMD /entrypoint.sh
