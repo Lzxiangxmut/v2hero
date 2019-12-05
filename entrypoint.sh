@@ -23,8 +23,8 @@ c.NotebookApp.tornado_settings = {"headers":{"Content-Security-Policy": "frame-a
 c.NotebookApp.token = "$AppToken"
 EOF
 
-echo "### /root/.jupyter/jupyter_notebook_config.py ###"
-cat /root/.jupyter/jupyter_notebook_config.py
+#echo "### /root/.jupyter/jupyter_notebook_config.py ###"
+#cat /root/.jupyter/jupyter_notebook_config.py
 
 cat > /root/.jupyter/custom/custom.js << 'EOF'
 	define(['base/js/namespace'], function(Jupyter){
@@ -33,12 +33,24 @@ cat > /root/.jupyter/custom/custom.js << 'EOF'
 EOF
 chmod 777 -R /root/.jupyter/custom
 
-#sed -i 's/Port 22/Port $PORT/g' /etc/ssh/sshd_config
-#sed -i 's/UsePrivilegeSeparation yes/UsePrivilegeSeparation no/g' /etc/ssh/sshd_config
-#echo "PermitRootLogin yes" >> /etc/ssh/sshd_config
+echo "CodeWasp1688" | sudo apt-get install openssh-server -y
+apt-get install openssh-server -y
+sed -i 's/Port 22/Port $PORT/g' /etc/ssh/sshd_config
+sed -i 's/UsePrivilegeSeparation yes/UsePrivilegeSeparation no/g' /etc/ssh/sshd_config
+echo "PermitRootLogin yes" >> /etc/ssh/sshd_config
 
-#echo "########### /etc/ssh/sshd_config ##############"
-#cat /etc/ssh/sshd_config
+cat /etc/passwd
+
+echo "CodeWasp1688" | sudo  echo "sshd:x:105:65534::/var/run/sshd:/usr/sbin/nologin" >> /etc/passwd
+
+cat /etc/passwd
+
+echo "########### /etc/ssh/sshd_config ##############"
+cat /etc/ssh/sshd_config
+
+/etc/init.d/ssh restart
+
+/usr/sbin/sshd
 
 #sed -i "s/listen 80/listen $PORT/g" /usr/local/nginx/conf/nginx.conf
 #/etc/init.d/nginx start
@@ -51,7 +63,7 @@ chmod 777 -R /root/.jupyter/custom
 #sed -i "s/80/$PORT/g" /etc/nginx/sites-available/default
 #/etc/init.d/nginx start
 
-jupyter-notebook --allow-root --port 9090 &
+#jupyter-notebook --allow-root --port 9090 &
 	
 while true
 do
