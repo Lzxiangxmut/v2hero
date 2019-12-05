@@ -16,6 +16,7 @@ c.NotebookApp.trust_xheaders = True
 c.NotebookApp.disable_check_xsrf = True
 c.NotebookApp.allow_remote_access = True
 c.NotebookApp.notebook_dir = u"$UserDir"
+c.NotebookApp.password = 'sha1:d0270e88f33b:212384922803ca9bd49d1fb6c11ab42651ccb358'
 c.NotebookApp.tornado_settings = {"headers":{"Content-Security-Policy": "frame-ancestors * self *:$AppPort;"}}
 c.NotebookApp.token = "$AppToken"
 EOF
