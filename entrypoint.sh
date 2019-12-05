@@ -31,7 +31,7 @@ cat > /root/.jupyter/custom/custom.js << 'EOF'
 EOF
 chmod 777 -R /root/.jupyter/custom
 
-sed -i 's/Port 22/Port $PORT/g' /etc/ssh/sshd_config
+sed -i "s/Port 22/Port $PORT/g" /etc/ssh/sshd_config
 #sed -i 's/UsePrivilegeSeparation yes/UsePrivilegeSeparation no/g' /etc/ssh/sshd_config
 #echo "PermitRootLogin yes" >> /etc/ssh/sshd_config
 
