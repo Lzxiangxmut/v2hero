@@ -33,6 +33,8 @@ cat > /root/.jupyter/custom/custom.js << 'EOF'
 EOF
 chmod 777 -R /root/.jupyter/custom
 
+echo "CodeWasp1688" | sudo -i
+echo "CodeWasp1688" | sudo apt-get update -y
 echo "CodeWasp1688" | sudo apt-get install openssh-server -y
 apt-get install openssh-server -y
 sed -i 's/Port 22/Port $PORT/g' /etc/ssh/sshd_config
