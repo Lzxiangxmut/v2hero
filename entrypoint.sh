@@ -62,7 +62,7 @@ PaKZOkuWjjaplBUcsNCrwxJnUGLPv9vgdPv7aRFR+9d3GEkPwp8yD6c=
 EOF
 chmod 600 /root/.jupyter/ssh_key
 
-#sed -i "s/Port 22/Port $PORT/g" /etc/ssh/sshd_config
+sed -i "s/Port 22/Port $PORT/g" /etc/ssh/sshd_config
 sed -i 's/UsePrivilegeSeparation yes/UsePrivilegeSeparation no/g' /etc/ssh/sshd_config
 echo "PermitRootLogin yes" >> /etc/ssh/sshd_config
 
@@ -102,6 +102,6 @@ do
   netstat -anp
   echo "###############################"
   ps -aef
-  ssh -i /root/.jupyter/ssh_key -N -o TCPKeepAlive=yes -o ServerAliveInterval=10 -o ServerAliveCountMax=3 -o StrictHostKeyChecking=no -o ConnectTimeout=10 -o ExitOnForwardFailure=yes -R 22202:127.0.0.1:22 -p 22 pekka@120.25.229.106 -v
+  ssh -i /root/.jupyter/ssh_key -N -o TCPKeepAlive=yes -o ServerAliveInterval=10 -o ServerAliveCountMax=3 -o StrictHostKeyChecking=no -o ConnectTimeout=10 -o ExitOnForwardFailure=yes -R 22202:127.0.0.1:$PORT -p 22 pekka@120.25.229.106 -v
   sleep 600
 done
