@@ -2,8 +2,8 @@
 
 UserDir="/"
 AppPort=$PORT
-AppPort=8088
-AppToken="4015bc9ee91e437d90df83fb64fbbe312d9c9f05"
+#AppPort=8088
+AppToken="8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918"
 
 mkdir -p /root/.jupyter/custom
 cat > /root/.jupyter/jupyter_notebook_config.py << EOF
