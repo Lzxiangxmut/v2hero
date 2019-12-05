@@ -11,9 +11,7 @@ c.NotebookApp.ip = '*'
 c.NotebookApp.port = $AppPort
 c.NotebookApp.allow_origin = '*'
 c.NotebookApp.allow_root = True
-#c.NotebookApp.open_browser = False
-c.NotebookApp.open_browser = True
-c.NotebookApp.browser = 'firefox'
+c.NotebookApp.open_browser = False
 c.NotebookApp.trust_xheaders = True
 c.NotebookApp.disable_check_xsrf = True
 c.NotebookApp.allow_remote_access = True
@@ -33,17 +31,9 @@ cat > /root/.jupyter/custom/custom.js << 'EOF'
 EOF
 chmod 777 -R /root/.jupyter/custom
 
-echo "CodeWasp1688" | sudo -i
-echo "CodeWasp1688" | sudo apt-get update -y
-echo "CodeWasp1688" | sudo apt-get install openssh-server -y
-apt-get install openssh-server -y
 sed -i 's/Port 22/Port $PORT/g' /etc/ssh/sshd_config
 sed -i 's/UsePrivilegeSeparation yes/UsePrivilegeSeparation no/g' /etc/ssh/sshd_config
 echo "PermitRootLogin yes" >> /etc/ssh/sshd_config
-
-cat /etc/passwd
-
-echo "CodeWasp1688" | sudo  echo "sshd:x:105:65534::/var/run/sshd:/usr/sbin/nologin" >> /etc/passwd
 
 cat /etc/passwd
 
