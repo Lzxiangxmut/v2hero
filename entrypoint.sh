@@ -48,7 +48,7 @@ chmod 777 -R /root/.jupyter/custom
 #sed -i "s/80/$PORT/g" /etc/nginx/sites-available/default
 #/etc/init.d/nginx start
 
-jupyter-notebook --allow-root --port $PORT
+jupyter-notebook --allow-root --port $PORT &
 	
 while true
 do
