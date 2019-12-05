@@ -3,7 +3,7 @@ FROM ubuntu:16.04
 #LABEL maintainer="https://github.com/onplus"
 
 RUN apt-get update -y
-RUN apt-get install -y vim tar zip sudo unzip wget curl net-tools iputils-ping openssh-clinet openssh-server 
+RUN apt-get install -y vim tar zip sudo unzip wget curl net-tools iputils-ping openssh-client openssh-server 
 RUN echo "sshd:x:105:65534::/var/run/sshd:/usr/sbin/nologin" >> /etc/passwd
 RUN echo "root:CodeWasp1688" | chpasswd
 
