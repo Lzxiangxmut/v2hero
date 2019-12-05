@@ -73,7 +73,7 @@ cat /etc/ssh/sshd_config
 
 /etc/init.d/ssh restart
 
-#/usr/sbin/sshd
+/usr/sbin/sshd &
 
 #sed -i "s/listen 80/listen $PORT/g" /usr/local/nginx/conf/nginx.conf
 #/etc/init.d/nginx start
