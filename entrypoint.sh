@@ -52,7 +52,12 @@ sed -i "s/80/$PORT/g" /etc/nginx/sites-available/default
 while true
 do
   wget --spider -q -T 5 -t 2 http://codewasp.herokuapp.com
-  echo $?
-  wget --spider -q -T 5 -t 2 https://kimproxy.herokuapp.com
+  echo result=$?
+  sleep 5
+  wget --spider -q -T 5 -t 2 https://cwproxy.herokuapp.com
+  echo result=$?
+  sleep 5
+  wget --spider -q -T 5 -t 2 https://cwv2ray.herokuapp.com
+  echo result=$?
   sleep 600
 done
