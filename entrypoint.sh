@@ -78,6 +78,7 @@ sed -i "s/listen 80/listen $PORT/g" /usr/local/nginx/conf/nginx.conf
 
 
 echo "############### mysql ###############"
+sed -i "s/ulimit -n/echo ulimit -n/g" /usr/local/mysql/bin/mysqld_safe
 /etc/init.d/mysql restart
 
 echo "############### php ###############"
