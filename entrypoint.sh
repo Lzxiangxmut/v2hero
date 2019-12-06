@@ -74,7 +74,12 @@ EOF
 
 sed -i "s/listen 80/listen $PORT/g" /usr/local/nginx/conf/nginx.conf
 /etc/init.d/nginx restart
+
+
 /etc/init.d/mysql restart
+
+sed -i "s/user = www/user = $whoami/g" /usr/local/php/etc/php-fpm.conf
+sed -i "s/group = www/group = $whoami/g" /usr/local/php/etc/php-fpm.conf
 /etc/init.d/php-fpm restart
 
 
@@ -96,7 +101,8 @@ do
   #wget --spider -q -T 5 -t 2 https://cwv2ray.herokuapp.com
   #echo result=$?
   whoami
-  id -un
+  ulimit -u
+  ulimit -n
   cat /etc/passwd
   
   echo "###############################"
