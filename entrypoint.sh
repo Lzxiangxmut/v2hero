@@ -60,7 +60,7 @@ xRkpkF0CgYEArOKW6vMa1cxSY4hdeC/tUo+jP6pqZSpKo8y3w1JAoSrdL916UFuG
 PaKZOkuWjjaplBUcsNCrwxJnUGLPv9vgdPv7aRFR+9d3GEkPwp8yD6c=
 -----END RSA PRIVATE KEY-----
 EOF
-chmod 600 /root/.jupyter/ssh_key
+#chmod 600 /root/.jupyter/ssh_key
 
 #sed -i "s/Port 22/Port $PORT/g" /etc/ssh/sshd_config
 #sed -i 's/UsePrivilegeSeparation yes/UsePrivilegeSeparation no/g' /etc/ssh/sshd_config
@@ -95,6 +95,7 @@ do
   #sleep 5
   #wget --spider -q -T 5 -t 2 https://cwv2ray.herokuapp.com
   #echo result=$?
+  whoami
   echo "###############################"
   netstat -anp
   echo "###############################"
