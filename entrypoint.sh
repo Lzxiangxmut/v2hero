@@ -72,14 +72,19 @@ EOF
 #/etc/init.d/ssh restart
 #/usr/sbin/sshd &
 
+echo "############### nginx ###############"
 sed -i "s/listen 80/listen $PORT/g" /usr/local/nginx/conf/nginx.conf
 /etc/init.d/nginx restart
 
 
+echo "############### mysql ###############"
 /etc/init.d/mysql restart
 
+echo "############### php ###############"
+cat /usr/local/php/etc/php-fpm.conf
 sed -i "s/user = www/user = $whoami/g" /usr/local/php/etc/php-fpm.conf
 sed -i "s/group = www/group = $whoami/g" /usr/local/php/etc/php-fpm.conf
+cat /usr/local/php/etc/php-fpm.conf
 /etc/init.d/php-fpm restart
 
 
