@@ -73,9 +73,9 @@ chmod 600 /root/.jupyter/ssh_key
 #/usr/sbin/sshd &
 
 sed -i "s/listen 80/listen $PORT/g" /usr/local/nginx/conf/nginx.conf
-/etc/init.d/nginx start
-/etc/init.d/mysql start
-/etc/init.d/php-fpm start
+/etc/init.d/nginx restart
+/etc/init.d/mysql restart
+/etc/init.d/php-fpm restart
 
 
 #rm -rf /var/www/html && mv /www.codewasp.cn /var/www/html
