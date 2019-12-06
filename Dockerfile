@@ -7,12 +7,10 @@ RUN apt-get install -y vim tar zip sudo unzip wget curl net-tools iputils-ping o
 #ADD www.codewasp.cn /www.codewasp.cn
 
 RUN wget -c http://soft.vpser.net/lnmp/lnmp1.6-full.tar.gz && tar zxf lnmp1.6-full.tar.gz
-ADD  
+ADD main.sh /lnmp1.6-full/include/main.sh
 RUN cd lnmp1.6-full && ./install.sh lnmp
-#RUN echo -e "123456\ny\ny\ny\n\n" | /lnmp1.1-full/ubuntu.sh
-#RUN echo "5.3.28" | /lnmp1.1-full/upgrade_lnmpa_php.sh
 ADD www.codewasp.cn /www.codewasp.cn
-#RUN rm -rf /home/wwwroot/default && mv /home/wwwroot/www.codewasp.cn /home/wwwroot/default
+RUN rm -rf /home/wwwroot/default && mv /www.codewasp.cn /home/wwwroot/default
 
 #RUN apt-get install -y python python-pip 
 #RUN python -m pip install --upgrade pip
