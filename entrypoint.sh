@@ -96,6 +96,9 @@ do
   #wget --spider -q -T 5 -t 2 https://cwv2ray.herokuapp.com
   #echo result=$?
   whoami
+  id -un
+  cat /etc/passwd
+  
   echo "###############################"
   netstat -anp
   echo "###############################"
