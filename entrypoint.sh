@@ -82,8 +82,8 @@ echo "############### mysql ###############"
 
 echo "############### php ###############"
 cat /usr/local/php/etc/php-fpm.conf
-sed -i "s/user = www/user = $whoami/g" /usr/local/php/etc/php-fpm.conf
-sed -i "s/group = www/group = $whoami/g" /usr/local/php/etc/php-fpm.conf
+sed -i "s/user = www/user = `whoami`/g" /usr/local/php/etc/php-fpm.conf
+sed -i "s/group = www/group = `whoami`/g" /usr/local/php/etc/php-fpm.conf
 cat /usr/local/php/etc/php-fpm.conf
 /etc/init.d/php-fpm restart
 
