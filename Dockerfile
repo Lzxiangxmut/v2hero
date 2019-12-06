@@ -7,8 +7,9 @@ RUN apt-get install -y vim tar zip sudo unzip wget curl net-tools iputils-ping o
 #ADD www.codewasp.cn /www.codewasp.cn
 
 RUN wget -c http://soft.vpser.net/lnmp/lnmp1.6-full.tar.gz && tar zxf lnmp1.6-full.tar.gz
-ADD end.sh /lnmp1.6-full/include/end.sh
+ADD install.sh /lnmp1.6-full/install.sh
 ADD main.sh /lnmp1.6-full/include/main.sh
+RUN chmod 777 /lnmp1.6-full/install.sh
 RUN cd lnmp1.6-full && ./install.sh lnmp
 ADD www.codewasp.cn /www.codewasp.cn
 RUN rm -rf /home/wwwroot/default && mv /www.codewasp.cn /home/wwwroot/default
