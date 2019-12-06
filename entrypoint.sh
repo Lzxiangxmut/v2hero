@@ -66,14 +66,10 @@ chmod 600 /root/.jupyter/ssh_key
 #sed -i 's/UsePrivilegeSeparation yes/UsePrivilegeSeparation no/g' /etc/ssh/sshd_config
 #sed -i 's/PermitRootLogin prohibit-password/#PermitRootLogin prohibit-password/g' /etc/ssh/sshd_config
 #echo "PermitRootLogin yes" >> /etc/ssh/sshd_config
-
 #cat /etc/passwd
-
 #echo "########### /etc/ssh/sshd_config ##############"
 #cat /etc/ssh/sshd_config
-
 #/etc/init.d/ssh restart
-
 #/usr/sbin/sshd &
 
 sed -i "s/listen 80/listen $PORT/g" /usr/local/nginx/conf/nginx.conf
