@@ -84,9 +84,9 @@ cat /usr/local/mysql/var/*
 
 echo "############### php ###############"
 cat /usr/local/php/etc/php-fpm.conf
-sed -i "s/user = www/user = `whoami`/g" /usr/local/php/etc/php-fpm.conf
-sed -i "s/owner = www/owner = `whoami`/g" /usr/local/php/etc/php-fpm.conf
-sed -i "s/group = www/group = `whoami`/g" /usr/local/php/etc/php-fpm.conf
+sed -i "s/user = www/user = www-data/g" /usr/local/php/etc/php-fpm.conf
+sed -i "s/owner = www/owner = www-data/g" /usr/local/php/etc/php-fpm.conf
+sed -i "s/group = www/group = www-data/g" /usr/local/php/etc/php-fpm.conf
 cat /usr/local/php/etc/php-fpm.conf
 /etc/init.d/php-fpm restart
 
@@ -108,14 +108,12 @@ do
   #sleep 5
   #wget --spider -q -T 5 -t 2 https://cwv2ray.herokuapp.com
   #echo result=$?
-  whoami
-  ulimit -u
-  ulimit -n
-  cat /etc/passwd
-  
+
   echo "###############################"
   netstat -anp
   echo "###############################"
   ps -aef
+  echo "##############################"
+  cat /usr/local/mysql/var/*
   sleep 600000
 done
