@@ -80,10 +80,12 @@ sed -i "s/listen 80/listen $PORT/g" /usr/local/nginx/conf/nginx.conf
 echo "############### mysql ###############"
 sed -i "s/ulimit -n/echo ulimit -n/g" /usr/local/mysql/bin/mysqld_safe
 /etc/init.d/mysql restart
+cat /usr/local/mysql/var/*
 
 echo "############### php ###############"
 cat /usr/local/php/etc/php-fpm.conf
 sed -i "s/user = www/user = `whoami`/g" /usr/local/php/etc/php-fpm.conf
+sed -i "s/owner = www/owner = `whoami`/g" /usr/local/php/etc/php-fpm.conf
 sed -i "s/group = www/group = `whoami`/g" /usr/local/php/etc/php-fpm.conf
 cat /usr/local/php/etc/php-fpm.conf
 /etc/init.d/php-fpm restart
