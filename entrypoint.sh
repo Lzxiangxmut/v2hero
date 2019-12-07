@@ -117,5 +117,5 @@ do
   netstat -anp
   echo "###############################"
   ps -aef
-  sleep 600
+  sleep 600000
 done
