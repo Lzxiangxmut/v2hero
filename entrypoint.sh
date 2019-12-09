@@ -114,6 +114,6 @@ do
   echo "###############################"
   ps -aef
   echo "##############################"
-  cat /usr/local/mysql/var/*
+  cat /usr/local/mysql/var/*.err
   sleep 600000
 done
