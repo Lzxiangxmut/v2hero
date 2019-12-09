@@ -1,9 +1,4 @@
-language: go
-
-sudo: required
-
-services:
-  - docker
+build:
   docker:
     web: Dockerfile
     
