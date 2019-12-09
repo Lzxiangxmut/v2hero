@@ -74,20 +74,22 @@ EOF
 
 echo "############### nginx ###############"
 sed -i "s/listen 80/listen $PORT/g" /usr/local/nginx/conf/nginx.conf
+sed -i "s|fastcgi_pass  unix:/tmp/php-cgi.sock;|fastcgi_pass  127.0.0.1:9000;|g" /usr/local/nginx/conf/enable-php.conf
 /etc/init.d/nginx restart
 
 
 echo "############### mysql ###############"
+user=`whoami`
+chown -R $user /usr/local/mysql/
 sed -i "s/ulimit -n/echo ulimit -n/g" /usr/local/mysql/bin/mysqld_safe
 /etc/init.d/mysql restart
-cat /usr/local/mysql/var/*
+
 
 echo "############### php ###############"
-cat /usr/local/php/etc/php-fpm.conf
 sed -i "s/user = www/user = www-data/g" /usr/local/php/etc/php-fpm.conf
 sed -i "s/owner = www/owner = www-data/g" /usr/local/php/etc/php-fpm.conf
 sed -i "s/group = www/group = www-data/g" /usr/local/php/etc/php-fpm.conf
-cat /usr/local/php/etc/php-fpm.conf
+sed -i "s|listen = /tmp/php-cgi.sock|listen = 127.0.0.1:9000|g" /usr/local/php/etc/php-fpm.conf
 /etc/init.d/php-fpm restart
 
 
@@ -114,6 +116,5 @@ do
   echo "###############################"
   ps -aef
   echo "##############################"
-  cat /usr/local/mysql/var/*.err
-  sleep 600000
+  sleep 600
 done
