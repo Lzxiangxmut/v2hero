@@ -72,6 +72,10 @@ EOF
 #/etc/init.d/ssh restart
 #/usr/sbin/sshd &
 
+echo "############### nginx ###############"
+sed -i "s/listen 80/listen $PORT/g" /usr/local/nginx/conf/nginx.conf
+sed -i "s|fastcgi_pass  unix:/tmp/php-cgi.sock;|fastcgi_pass  127.0.0.1:9000;|g" /usr/local/nginx/conf/enable-php.conf
+/etc/init.d/nginx restart
 
 echo "############### mysql ###############"
 user=`whoami`
@@ -87,10 +91,10 @@ sed -i "s/group = www/group = www-data/g" /usr/local/php/etc/php-fpm.conf
 sed -i "s|listen = /tmp/php-cgi.sock|listen = 127.0.0.1:9000|g" /usr/local/php/etc/php-fpm.conf
 /etc/init.d/php-fpm restart
 
-echo "############### nginx ###############"
-sed -i "s/listen 80/listen $PORT/g" /usr/local/nginx/conf/nginx.conf
-sed -i "s|fastcgi_pass  unix:/tmp/php-cgi.sock;|fastcgi_pass  127.0.0.1:9000;|g" /usr/local/nginx/conf/enable-php.conf
-/etc/init.d/nginx restart
+#echo "############### nginx ###############"
+#sed -i "s/listen 80/listen $PORT/g" /usr/local/nginx/conf/nginx.conf
+#sed -i "s|fastcgi_pass  unix:/tmp/php-cgi.sock;|fastcgi_pass  127.0.0.1:9000;|g" /usr/local/nginx/conf/enable-php.conf
+#/etc/init.d/nginx restart
 
 #rm -rf /var/www/html && mv /www.codewasp.cn /var/www/html
 #ls /var/www/html/
