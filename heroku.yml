@@ -1,8 +1,10 @@
 language: go
+
 sudo: required
 
 services:
   - docker
+  
   docker:
     web: Dockerfile
     
