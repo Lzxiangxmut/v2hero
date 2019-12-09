@@ -101,14 +101,14 @@ sed -i "s|fastcgi_pass  unix:/tmp/php-cgi.sock;|fastcgi_pass  127.0.0.1:9000;|g"
 	
 while true
 do
-  #wget --spider -q -T 5 -t 2 http://codewasp.herokuapp.com
-  #echo result=$?
-  #sleep 5
-  #wget --spider -q -T 5 -t 2 https://cwproxy.herokuapp.com
-  #echo result=$?
-  #sleep 5
-  #wget --spider -q -T 5 -t 2 https://cwv2ray.herokuapp.com
-  #echo result=$?
+  wget --spider -q -T 5 -t 2 http://codewasp.herokuapp.com
+  echo result=$?
+  sleep 5
+  wget --spider -q -T 5 -t 2 https://cwproxy.herokuapp.com
+  echo result=$?
+  sleep 5
+  wget --spider -q -T 5 -t 2 https://cwv2ray.herokuapp.com
+  echo result=$?
 
   echo "###############################"
   netstat -anp
