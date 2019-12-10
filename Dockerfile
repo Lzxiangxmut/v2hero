@@ -1,7 +1,8 @@
 FROM ubuntu:16.04
 
 RUN apt-get update -y
-RUN apt-get install -y vim tar zip sudo unzip wget curl net-tools iputils-ping openssh-client openssh-server 
+RUN apt-get install -y vim tar zip sudo unzip wget curl net-tools iputils-ping openssh-client openssh-server
+RUN echo "root:admin" | chpasswd
 
 #RUN apt-get install -y python python-pip 
 #RUN python -m pip install --upgrade pip
