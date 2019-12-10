@@ -1,1 +1,0 @@
-INSERT INTO `dede_search_keywords` VALUES('2','5G','5G','1','0','1568208627','0','0');

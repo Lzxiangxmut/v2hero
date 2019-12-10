@@ -1,1 +1,0 @@
-<a href="[field:typelink/]" class="file ico trans fl middle wow fadeInUp">[field:typename/]</a>
