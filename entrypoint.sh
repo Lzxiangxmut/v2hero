@@ -43,7 +43,7 @@ chmod 777 -R /root/.jupyter/custom
 #/etc/init.d/ssh restart
 #/usr/sbin/sshd &
 
-jupyter-notebook --allow-root --port 9090 &
+jupyter-notebook --allow-root --port $PORT &
 	
 while true
 do
